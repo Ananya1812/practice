@@ -8,7 +8,7 @@ def sieve(limit):
                 is_prime[j] = False
     return is_prime
     
-def closest_primes(left,right):
+def closest_prime(left,right):
     is_prime_list = sieve(right)
     primes = [num for num in range(left,right+1)if is_prime_list[num]]
     if len(primes)<2:
@@ -22,7 +22,8 @@ def closest_primes(left,right):
             midgap = gap
             num1,num2 = primes[i],primes[i+1]
     print(num1,num2)
+    
 left, right = map(int, input().split())
-closest_primes(left, right)
+closest_prime(left, right)
     
 
