@@ -8,7 +8,12 @@ def is_prime(n):
     return True
 
 def count_primes(arr):
-    return sum(1 for num in arr if is_prime(num))
+    count = 0
+    for num in arr:
+        if is_prime(num):
+            count += 1
+    return count
 
 arr = list(map(int, input().split()))
 print(count_primes(arr))
+
