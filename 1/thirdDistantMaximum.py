@@ -1,37 +1,26 @@
 # https://leetcode.com/problems/third-maximum-number/description/
 def third_max(nums):
-    nums = sorted(set(nums), reverse=True)  
-    return nums[2] if len(nums) >= 3 else nums[0]  
-
-n = int(input()) 
-nums = list(map(int, input().split()))  
-
-print(third_max(nums))
-
-
-#second solution
-def thirdMax(nums):
-    first_max = second_max = third_max = float('-inf')  
-    seen = set() 
+    max1 = max2 = max3 = float('-inf')  
+    unique_nums = set()  
     
     for num in nums:
-        if num not in seen: 
-            seen.add(num) 
-            if num > first_max:
-                third_max = second_max
-                second_max = first_max
-                first_max = num
-            elif num > second_max:
-                third_max = second_max
-                second_max = num
-            elif num > third_max:
-                third_max = num
+        if num not in unique_nums: 
+            unique_nums.add(num) 
+            if num > max1:
+                max3 = max2
+                max2 = max1
+                max1 = num
+            elif num > max2:
+                max3 = max2
+                max2 = num
+            elif num > max3:
+                max3 = num
 
-    if third_max == float('-inf'):
-        return first_max
-    return third_max
+    if max3 == float('-inf'):
+        return max1
+    return max3
 
-nums = list(map(int, input().split()))
-print(thirdMax(nums))
+numbers = list(map(int, input().split()))
+print(third_max(numbers))
 
 
