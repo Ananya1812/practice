@@ -1,11 +1,11 @@
 # https://leetcode.com/problems/third-maximum-number/description/
 def third_max(nums):
-    max1 = max2 = max3 = float('-inf')  
-    unique_nums = set()  
-    
+    max1 = max2 = max3 = float('-inf')
+    unique_nums = []  
+
     for num in nums:
-        if num not in unique_nums: 
-            unique_nums.add(num) 
+        if num not in unique_nums:  
+            unique_nums.append(num)
             if num > max1:
                 max3 = max2
                 max2 = max1
@@ -22,5 +22,6 @@ def third_max(nums):
 
 numbers = list(map(int, input().split()))
 print(third_max(numbers))
+
 
 
