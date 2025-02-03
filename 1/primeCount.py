@@ -9,8 +9,8 @@ def is_prime(n):
 
 def count_primes(arr):
     count = 0
-    for num in arr:
-        if is_prime(num):
+    for i in arr:
+        if is_prime(i):
             count += 1
     return count
 
