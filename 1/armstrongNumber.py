@@ -1,16 +1,15 @@
-def is_armstrong(n):
+def armstrong(n):
+    original = n
     power = len(str(n))
-    armstrong_sum = 0
-
+    sum = 0
     while n > 0:
-        digit = n % 10
-        armstrong_sum += digit ** power
+        digit = n % 10 
+        sum += digit**power
         n //= 10
-
-    if armstrong_sum == n:
+    if sum == original:
         print("Armstrong")
     else:
         print("Not Armstrong")
-
+        
 n = int(input())
-is_armstrong(n)
+armstrong(n)
